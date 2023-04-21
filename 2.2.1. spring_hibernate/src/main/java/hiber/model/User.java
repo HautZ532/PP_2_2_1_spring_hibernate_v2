@@ -19,6 +19,13 @@ public class User {
    @Column(name = "email")
    private String email;
 
+//   @Column(name = "car_id")
+//   private int carId;
+
+   @OneToOne
+   @JoinColumn(name = "car_id")
+   private Car cars;
+
    public User() {}
    
    public User(String firstName, String lastName, String email) {
@@ -58,4 +65,12 @@ public class User {
    public void setEmail(String email) {
       this.email = email;
    }
+
+//   public int getCarId() {
+//      return carId;
+//   }
+//
+//   public void setCarId(int car) {
+//      this.carId = car;
+//   }
 }
