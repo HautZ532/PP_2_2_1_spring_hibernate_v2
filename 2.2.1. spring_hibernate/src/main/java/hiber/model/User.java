@@ -19,10 +19,7 @@ public class User {
    @Column(name = "email")
    private String email;
 
-//   @Column(name = "car_id")
-//   private int carId;
-
-   @OneToOne
+   @OneToOne(cascade = CascadeType.ALL)
    @JoinColumn(name = "car_id")
    private Car cars;
 
@@ -66,11 +63,11 @@ public class User {
       this.email = email;
    }
 
-//   public int getCarId() {
-//      return carId;
-//   }
-//
-//   public void setCarId(int car) {
-//      this.carId = car;
-//   }
+   public Car getCars() {
+      return cars;
+   }
+
+   public void setCars(Car cars) {
+      this.cars = cars;
+   }
 }

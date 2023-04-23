@@ -8,18 +8,19 @@ public class Car {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
     @Column(name = "model")
     private String model;
     @Column(name = "series")
-    private int series;
+    private String series;
 
     public Car() {
 
     }
 
-    public Car(String model, int series) {
+    public Car(String model, String series) {
         this.model = model;
         this.series = series;
     }
@@ -40,11 +41,11 @@ public class Car {
         this.model = model;
     }
 
-    public int getSeries() {
+    public String getSeries() {
         return series;
     }
 
-    public void setSeries(int series) {
+    public void setSeries(String series) {
         this.series = series;
     }
 
