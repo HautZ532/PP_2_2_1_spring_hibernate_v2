@@ -15,8 +15,6 @@ public class Car {
     private String model;
     @Column(name = "series")
     private String series;
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "userCars")
-    private User user;
 
     public Car() {
 
@@ -49,14 +47,6 @@ public class Car {
 
     public void setSeries(String series) {
         this.series = series;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 
     @Override
